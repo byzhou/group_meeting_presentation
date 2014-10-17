@@ -1,0 +1,126 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+
+
+\documentclass{beamer}
+
+%
+% DO NOT USE THIS FILE AS A TEMPLATE FOR YOUR OWN TALKS¡!!
+%
+% Use a file in the directory solutions instead.
+% They are much better suited.
+%
+
+
+% Setup appearance:
+
+\usetheme{Darmstadt}
+%\usetheme{CambridgeUS}
+%\usetheme{Berkeley}
+%\usetheme{Hannover}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent=30}
+\setbeamertemplate{footline}{
+    
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+
+    \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}}%
+    \vskip0pt% 
+    
+    
+}
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage{enumerate}
+
+
+
+% Setup TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+
+% Author, Title, etc.
+
+\title[ 2014 Fall Group Meeting ] 
+{%
+    High-Sensitivity Hardware Trojan Detection Using
+    Multimodal Characterization
+  %
+}
+
+\author[Boyou Zhou]
+{
+  Kangqiao Hu\inst{1}, Nazma Nowrozy\inst{2}, Sherief Reday \inst{2}\\
+  and Farinaz Koushanfar\inst{1}\\
+  \textit{Presented by Boyou Zhou\inst{*}}
+}
+
+\institute[Boston University, MA]
+{
+  \inst{1} ECE Department, Rice University, Houston, Texas, 77005 \\
+  Email: kangqiao.hu, farinaz@rice.edu\\
+  \inst{2} School of Engineering, Brown University, Providence, RI, 02906 \\
+  Email: abdullah nowroz, sherief reda@brown.edu\\
+  \inst{*} Boston Univeristy, MA
+}
+
+\date[Modified on \today]
+%{Created on Oct 16 2014, Modified on \today}
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\AtBeginSubsection{
+    \frame<beamer>{ 
+    \frametitle{Outline}   
+    \tableofcontents[currentsection,currentsubsection]
+    }
+}
+
+
+\section{Preparation Work}
+\subsection{Contacting People}
+\begin{frame}
+    Oct 8 , 2014
+\end{frame}
+
+\input{Intro.tex}
+
+\end{document}
+
+
