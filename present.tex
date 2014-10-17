@@ -258,12 +258,14 @@
 
 \subsection{2D Principal Component Analysis}
 \begin{frame}{Principal Component Analysis}
+\pause
     \begin{itemize}
         \item Project image $A$ is project in an axis $x$. It follows the transformation
             equation.
             \begin{equation}
                 y = A x
             \end{equation}
+\pause
         \item The discriminatory power of $x$ is evaluated by total scatter of the samples.
             \begin{equation}
                 J (x) = tr(S_{x}) =  x ^ T G_{t} x
@@ -271,6 +273,7 @@
             \begin{equation}
                 G_{t} = x ^ T E [ ( A - E ( A ) ) ^ T ( A - E ( A ) ) ] x
             \end{equation}
+\pause
         \item The optimal projection axis $x_{opt}$ is the optimized eigenvectors of $G_{t}$ ,
             coresponding the largest eigenvalue.
     \end{itemize}
@@ -278,6 +281,9 @@
 
 \subsection{Feature Extraction and Identification}
 \begin{frame}{Feature Extraction}
+    They use the projection as the golden model, and then calculate the Euclidean distance 
+    between the tested chip and the golden model. And then determine the threshold to detect
+    the trojan for future use.
 \end{frame}
 
 \section{Test Results}
@@ -298,6 +304,14 @@
         \end{figure}
 \end{frame}
 
+\subsection{Critics}
+\begin{frame}{Critics}
+    \begin{itemize}
+        \item Process variation test value is not reasonable.
+        \item The relation between thermal maps and power variation does not make
+        any sense when it comes to real chip.
+    \end{itemize}
+\end{frame}
 \end{document}
 
 
