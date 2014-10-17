@@ -206,26 +206,55 @@
 
 \subsection{Temperature and Power Characterization}
 \begin{frame}{$T\&P$ Characterization}
+\pause
     \begin{itemize}
         \item \textbf{Temperature Charaterization}\\
+        \begin{itemize}
+            \item [*] Random Inputs
+            \item [*] Estimation of power trace fo each block by Primetime-PX
+            \item [*] Use HotSpot simulation tools to create steady state thermal 
+                        maps of various testbench circuits.
+        \end{itemize}
 \pause
-            \begin{itemize}
-                \item [*] Random Inputs
-                \item [*] Estimation of power trace fo each block by Primetime-PX
-                \item [*] Use HotSpot simulation tools to create steady state thermal 
-                            maps of various testbench circuits.
-            \end{itemize}
         \item \textbf{Power Characterization}
-\pause
-            \begin{itemize}
-                \item [*] Power Characterization Formula
-                    \begin{equation}
-                        Rp + e = t
-                    \end{equation}
-            \end{itemize}
+        \begin{equation}
+            Rp + e = t
+        \end{equation}
+        \begin{itemize}
+            \item [*] Power Characterization Formula
+            \item [*] $R$ represents the thermal resistivities created by HotSpot.
+            \item [*] $p$ represents the power density of the chip.
+            \item [*] $e$ represents measuring noise.
+            \item [*] $t$ represents the temperatures.
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Power Characterization}
+    \begin{itemize}
+        \item [*] Power characterization does not use the same resolution as the 
+                thermal characterization. $R$ is a 10 by 10 matrix.
+        \item [*] The optimization problem is to minimize the measurement error.
+    \end{itemize}
+\end{frame}
+
+\section{Test Results}
+\subsection{Process Variation Tests}
+\begin{frame}{Process Variation Results}
+        \begin{figure}[p]
+            \includegraphics[width=3in]{../img/PV_thermal.PNG}
+            \caption{\textbf{Detection under different porcess variation level
+                    using thermal maps}}
+            \label{PV_thermal}
+        \end{figure}
+
+        \begin{figure}[p]
+            \includegraphics[width=3in]{../img/PV_power.PNG}
+            \caption{\textbf{Detection under different porcess variation level
+                    using power maps}}
+            \label{PV_power}
+        \end{figure}
+\end{frame}
 
 \end{document}
 
