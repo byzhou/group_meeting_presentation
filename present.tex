@@ -112,14 +112,120 @@
     }
 }
 
+%\input{Intro.tex}
+\section{Introduction}
+\subsection{How Hardware Can Be Attacked?}
+\begin{frame}{Method of Hardware Attacking}
+    \begin{columns}
 
-\section{Preparation Work}
-\subsection{Contacting People}
-\begin{frame}
-    Oct 8 , 2014
+        \column{0.5\textwidth}
+        \begin{figure}[p]
+            \includegraphics[width=2in]{../img/HT_method.PNG}
+            \caption{\textbf{Hardware Trojan Attacks by Different Parties at Different
+                    stages of IC Life Cycles}}
+            \label{Hardware Trojan Attack Method}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{itemize}
+\pause
+            \item Insert Trojan in IP.
+\pause
+            \item Insert HT in Design.
+\pause
+            \item \textbf{Insert HT After Reverse-engineered the GDS.}
+        \end{itemize}
+
+    \end{columns}
 \end{frame}
 
-\input{Intro.tex}
+\subsection{What kind of HT Are We Interested in?}
+\begin{frame}{Detecting Hardware Trojans that has been Insterted After Fab}
+\pause
+    \begin{block}{Detectability of Hardware Trojan}
+        \begin{itemize}
+            \item \textit{Size is Small.} 
+            \item \textit{Side-Channel Leakage is negligible.}
+            \item \textit{Little chance for hardware to be Trigger}\\
+                          Avoid extensive functional testing.
+        \end{itemize}
+    \end{block}
+
+\pause
+    \begin{block}{Side Channel Analysis}
+        \begin{itemize}
+            \item \textit{Power Consumption}
+            \item \textit{Electromagnetic Radiation}
+            \item \textit{Timing Behavior}
+            \item \textit{Sound Waves}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Thermal Analysis}
+\subsection{Basic Idea}
+
+\begin{frame}{Thermal Map}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}[p]
+            \includegraphics[width=2in]{../img/basic_idea.PNG}
+            \caption{\textbf{Thermal Map of MIPS}}
+            \label{Hardware Trojan Attack}
+        \end{figure}
+
+        \column{0.5\textwidth}
+            \begin{itemize}
+\pause
+                \item [a] Termal Map without Trojan
+\pause
+                \item [b] Estimated Power Map without Trojan
+\pause
+                \item [c] Thermal Map with Trojan
+\pause
+                \item [d] Estimated Power Map with Trojan
+            \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Detection Framework}
+    \begin{itemize}
+        \item [*] Trojan Detection Method
+            \begin{itemize}
+\pause
+                \item \textbf{Post-silicon Spatial Temperature}\\
+                    Using infrared techniques to obtain very high resolution 
+                    thermal maps by running various workloads.
+\pause
+                \item \textbf{Post-silicon Power Characterization}\\
+                    Thermal maps are used to determine accurate and detailed
+                    corresponding spatial power maps for actual trojan detection.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Temperature and Power Characterization}
+\begin{frame}{$T\&P$ Characterization}
+    \begin{itemize}
+        \item \textbf{Temperature Charaterization}\\
+\pause
+            \begin{itemize}
+                \item [*] Random Inputs
+                \item [*] Estimation of power trace fo each block by Primetime-PX
+                \item [*] Use HotSpot simulation tools to create steady state thermal 
+                            maps of various testbench circuits.
+            \end{itemize}
+        \item \textbf{Power Characterization}
+\pause
+            \begin{itemize}
+                \item [*] Power Characterization Formula
+                    \begin{equation}
+                        Rp + e = t
+                    \end{equation}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
 
 \end{document}
 
