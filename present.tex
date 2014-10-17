@@ -55,6 +55,7 @@
 \usepackage{graphicx}
 %\usepackage{natbib}
 \usepackage{enumerate}
+\usepackage{amsmath}
 
 
 
@@ -231,11 +232,52 @@
 \end{frame}
 
 \begin{frame}{Power Characterization}
+\pause
     \begin{itemize}
         \item [*] Power characterization does not use the same resolution as the 
                 thermal characterization. $R$ is a 10 by 10 matrix.
-        \item [*] The optimization problem is to minimize the measurement error.
+        \item [*] The optimization problem is to minimize the measurement error.\\
+            \begin{equation}
+                    t_{r} = t - t_{min},  
+            \end{equation}
+            \begin{equation}
+                    arg_{p_{r}} min {\lVert Rp_{r} - t_{r} \rVert} ^ 2 , s. t. P_{r} \geq 0
+            \end{equation}
+\pause
+            \begin{itemize}
+                \item Find out the minimum squared error between the temperatures computed from 
+                    the estimated power and the real meausured power.
+                \item The minimum estimated design power is $p_{min}$, corresponding temperature 
+                    maps is $t_{min}$.
+                \item $t_{r}$ is the residual temperature. $p_{r}$ is the residual power. The 
+                    problem is how to find the reasonable $p_{r}$.
+            \end{itemize}
+
     \end{itemize}
+\end{frame}
+
+\subsection{2D Principal Component Analysis}
+\begin{frame}{Principal Component Analysis}
+    \begin{itemize}
+        \item Project image $A$ is project in an axis $x$. It follows the transformation
+            equation.
+            \begin{equation}
+                y = A x
+            \end{equation}
+        \item The discriminatory power of $x$ is evaluated by total scatter of the samples.
+            \begin{equation}
+                J (x) = tr(S_{x}) =  x ^ T G_{t} x
+            \end{equation}
+            \begin{equation}
+                G_{t} = x ^ T E [ ( A - E ( A ) ) ^ T ( A - E ( A ) ) ] x
+            \end{equation}
+        \item The optimal projection axis $x_{opt}$ is the optimized eigenvectors of $G_{t}$ ,
+            coresponding the largest eigenvalue.
+    \end{itemize}
+\end{frame}
+
+\subsection{Feature Extraction and Identification}
+\begin{frame}{Feature Extraction}
 \end{frame}
 
 \section{Test Results}
